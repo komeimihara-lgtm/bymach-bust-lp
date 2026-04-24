@@ -152,11 +152,15 @@ const modalClose = document.getElementById('modalClose');
 document.querySelectorAll('a[href="#demo-form"]').forEach((link) => {
   link.addEventListener('click', (e) => {
     e.preventDefault();
-    // Close case modal first if open
+    // Close case modal first if open, then open demo modal
     if (caseModal?.classList.contains('active')) {
       closeCaseModal();
+      setTimeout(() => {
+        openDemoModal();
+      }, 300);
+    } else {
+      openDemoModal();
     }
-    openDemoModal();
   });
 });
 
