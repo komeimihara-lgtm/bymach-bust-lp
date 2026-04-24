@@ -217,6 +217,53 @@ html, body {
 }
 
 /* ============================================
+   IMAGE CTA (透明リンク・画像内ボタン部分に重ねる)
+   ============================================ */
+
+.slide-with-cta {
+  position: relative;
+}
+
+.img-cta {
+  position: absolute;
+  left: 6%;
+  width: 88%;
+  display: block;
+  border-radius: 12px;
+  cursor: pointer;
+  transition: background 0.2s ease;
+}
+
+.img-cta:active {
+  background: rgba(217, 117, 134, 0.15);
+}
+
+/* 各スライドのCTAボタン位置 (画像内の%で指定) */
+.img-cta-sl01 {
+  /* SL01: 下部ピンクボタン */
+  bottom: 2%;
+  height: 7%;
+}
+
+.img-cta-sl03 {
+  /* SL03: 下部ゴールドボタン */
+  bottom: 2%;
+  height: 6%;
+}
+
+.img-cta-sl04 {
+  /* SL04: 下部ピンクボタン */
+  bottom: 2%;
+  height: 7%;
+}
+
+.img-cta-sl11 {
+  /* SL11: 下部クリーム色ボタン */
+  bottom: 2%;
+  height: 7%;
+}
+
+/* ============================================
    CTA CLICK OVERLAY (on final slide image)
    ============================================ */
 
@@ -246,18 +293,18 @@ html, body {
 
 /* Tuned to image 16_contact_cta_free_demo.png layout */
 .cta-area-demo {
-  top: 47%;
-  height: 7.5%;
+  top: 53%;
+  height: 8%;
 }
 
 .cta-area-line {
-  top: 55.5%;
-  height: 7.5%;
+  top: 63.5%;
+  height: 8%;
 }
 
 .cta-area-doc {
-  top: 64%;
-  height: 7.5%;
+  top: 74%;
+  height: 8%;
 }
 
 /* ============================================
