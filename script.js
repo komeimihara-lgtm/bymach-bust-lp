@@ -152,15 +152,11 @@ const modalClose = document.getElementById('modalClose');
 document.querySelectorAll('a[href="#demo-form"]').forEach((link) => {
   link.addEventListener('click', (e) => {
     e.preventDefault();
-    // Close case modal first if open, then open demo modal
+    // Close case modal first if open
     if (caseModal?.classList.contains('active')) {
       closeCaseModal();
-      setTimeout(() => {
-        openDemoModal();
-      }, 300);
-    } else {
-      openDemoModal();
     }
+    openDemoModal();
   });
 });
 
@@ -185,5 +181,21 @@ demoModal?.addEventListener('click', (e) => {
 document.addEventListener('keydown', (e) => {
   if (e.key === 'Escape' && demoModal?.classList.contains('active')) {
     closeDemoModal();
+  }
+});
+
+// URLパラメータでフォームモーダル自動起動
+// 例: https://bymach-bust-lp.vercel.app/?openform=1
+window.addEventListener('DOMContentLoaded', () => {
+  const params = new URLSearchParams(window.location.search);
+  if (params.get('openform') === '1') {
+    const modal = document.getElementById('demoModal');
+    if (modal) {
+      // 少し遅延させてフェードイン演出と被らないように
+      setTimeout(() => {
+        modal.classList.add('active');
+        document.body.style.overflow = 'hidden';
+      }, 500);
+    }
   }
 });
